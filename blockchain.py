@@ -1,7 +1,6 @@
 from block import Block
 
 
-# Basically just a linked list
 class Blockchain:
     diff = 20
     # Two to the power of 32, the max integer
@@ -40,15 +39,3 @@ class Blockchain:
             else:
                 # We are trying again, update the nonce
                 block.nonce += 1
-
-
-# Execute our blockchain
-blockchain = Blockchain()
-# Mine 10 blocks
-for n in range(10):
-    blockchain.mine(Block("Block " + str(n + 1)))
-
-# iterate through blockchain printing everything
-while blockchain.head is not None:
-    print(blockchain.head)
-    blockchain.head = blockchain.head.next
