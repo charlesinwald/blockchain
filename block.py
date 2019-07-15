@@ -16,7 +16,7 @@ class Block:
     # see hash comment
     previous_hash = 0x0
     # used for synchronization of multiple blockchains
-    timestamp = datetime.datetime.now()
+    timestamp = datetime.datetime.isoformat(datetime.datetime.now())
 
     # When we create a block, all we do is store its data
     def __init__(self, data):
@@ -40,3 +40,4 @@ class Block:
     def __str__(self):
         return "Block Hash: " + str(self.hashblock()) + "\nBlockNo: " + str(self.blockNo) + "\nBlock Data: " + str(
             self.data) + "\nHashes: " + str(self.nonce) + "\n----------------"
+
